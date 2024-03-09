@@ -4,38 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="547ad3f7-0191-4958-bc8b-88c5b4399cc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/config/DBConnectionProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/config/DatabaseConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/dao/CarriageDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/dao/TrainDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/Train.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/carriage/Carriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/carriage/DiningCarriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/carriage/FreightCarriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/carriage/PassengerCarriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/model/carriage/SleepingCarriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/service/TrainModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/service/TrainService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/ClientReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/ClientSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ClientCommandHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/CommandParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ServerMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/CarriageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/InputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/TrainInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="547ad3f7-0191-4958-bc8b-88c5b4399cc6" name="Changes" comment="ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +48,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709946069123</updated>
-      <workItem from="1709946070247" duration="1090000" />
+      <workItem from="1709946070247" duration="1774000" />
     </task>
+    <task id="LOCAL-00001" summary="ok">
+      <option name="closed" value="true" />
+      <created>1709947262134</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709947262134</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok" />
   </component>
 </project>
