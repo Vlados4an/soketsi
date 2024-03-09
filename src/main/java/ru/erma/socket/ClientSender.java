@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.Socket;
 
 public class ClientSender {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         try {
             Socket clientSocket = new Socket("localhost", 4004);
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
