@@ -46,7 +46,7 @@ public class ServerMessageHandler {
     private void processMessage(String message, BufferedWriter out) throws IOException {
         Command command = commandParser.parse(message);
         String output;
-        if ("5".equals(command.command()) && command.params().length >= 3) {
+        if ("5".equals(command.command()) || "6".equals(command.command()) || "7".equals(command.command())) {
             output = app.runCommandWithRange(command.command(), command.params());
         } else {
             output = app.runCommand(command.command(), Arrays.toString(command.params()));

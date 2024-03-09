@@ -25,7 +25,7 @@ public class Application {
     }
 
     public String runCommand(String command,String trainParam) {
-        trainParam = trainParam.replaceAll("[^0-9]", ""); // Remove all non-digit characters
+        trainParam = trainParam.replaceAll("[^0-9]", "");
         return switch (command) {
             case "1" -> saveTrain(trainParam);
             case "2" -> displayTotalPassengerCapacity(Integer.parseInt(trainParam));
@@ -36,11 +36,29 @@ public class Application {
         };
     }
 
+
+
     public String runCommandWithRange(String command, String[] params) {
-        int trainId = Integer.parseInt(params[0]);
-        int minCapacity = Integer.parseInt(params[1]);
-        int maxCapacity = Integer.parseInt(params[2]);
-        return findCarriagesByPassengerCapacityRange(trainId, minCapacity, maxCapacity);
+        return switch (command){
+            case "5" -> {
+                int trainId = Integer.parseInt(params[0]);
+                int minCapacity = Integer.parseInt(params[1]);
+                int maxCapacity = Integer.parseInt(params[2]);
+                yield findCarriagesByPassengerCapacityRange(trainId, minCapacity, maxCapacity);
+            }
+            case "6" -> {
+                int trainId = Integer.parseInt(params[0]);
+                String trainName = params[1];
+                yield modifyTrain(trainId, trainName);
+            }
+            case "7" -> {
+                String type = params[0];
+                int comfortLevel = Integer.parseInt(params[1]);
+                yield modifyCarriage(type, comfortLevel);
+            }
+
+            default -> invalidOption();
+        };
     }
 
     public static Application runApp(){
@@ -52,7 +70,7 @@ public class Application {
         InputHandler inputHandler = new InputHandler();
         TrainInitializer trainInitializer = new TrainInitializer(trainDao, carriageDao);
         TrainService trainService = new TrainService(carriageDao);
-        TrainModifier trainModifier = new TrainModifier(trainDao, carriageDao, inputHandler);
+        TrainModifier trainModifier = new TrainModifier(trainDao, carriageDao);
         Menu menu = new Menu(inputHandler);
         return new Application(trainService, trainInitializer, trainModifier, menu);
     }
@@ -83,14 +101,12 @@ public class Application {
                 .collect(Collectors.joining("\n"));
     }
 
-    private void modifyTrain() {
-        int id = menu.getTrainIdFromUser();
-        trainModifier.modifyTrainName(id);
+    private String modifyTrain(int trainId, String trainName) {
+        return trainModifier.modifyTrainName(trainId, trainName);
     }
 
-    private void modifyCarriage() {
-        String type = menu.getCarriageTypeFromUser();
-        trainModifier.modifyCarriageComfortLevel(type);
+    private String modifyCarriage(String type, int newComfortLevel) {
+        return trainModifier.modifyCarriageComfortLevel(type, newComfortLevel);
     }
 
     private String invalidOption() {

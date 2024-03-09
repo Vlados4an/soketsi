@@ -7,22 +7,19 @@ import ru.erma.util.InputHandler;
 public class TrainModifier {
     private final TrainDao trainDao;
     private final CarriageDao carriageDao;
-    private final InputHandler inputHandler;
 
-    public TrainModifier(TrainDao trainDao, CarriageDao carriageDao, InputHandler inputHandler) {
+    public TrainModifier(TrainDao trainDao, CarriageDao carriageDao) {
         this.trainDao = trainDao;
         this.carriageDao = carriageDao;
-        this.inputHandler = inputHandler;
     }
 
-    public void modifyTrainName(int id) {
-        inputHandler.skipLine();
-        String newTrainName = inputHandler.getStringInput("Enter new train name:");
+    public String modifyTrainName(int id, String newTrainName) {
         trainDao.update(id,newTrainName);
+        return "Train modified successfully";
     }
 
-    public void modifyCarriageComfortLevel(String type) {
-        int newComfortLevel = inputHandler.getPositiveIntInput("Enter new comfort level for carriages of type " + type + ":");
+    public String modifyCarriageComfortLevel(String type, int newComfortLevel) {
         carriageDao.updateComfortLevelByType(type, newComfortLevel);
+        return "Carriage comfort level modified successfully";
     }
 }

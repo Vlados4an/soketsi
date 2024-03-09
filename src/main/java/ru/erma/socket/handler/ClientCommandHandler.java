@@ -23,12 +23,20 @@ public class ClientCommandHandler {
             String userInput = getUserInput(prompt);
             command += " " + userInput;
         }
-        if (command.charAt(0) == '5') {
+        if (command.startsWith("5")) {
             System.out.println("Введите минимальную вместимость:");
             String minCapacity = reader.readLine();
             System.out.println("Введите максимальную вместимость:");
             String maxCapacity = reader.readLine();
             command += " " + minCapacity + " " + maxCapacity;
+        } else if (command.startsWith("6")) {
+            System.out.println("Введите новое име поезда:");
+            String trainName = reader.readLine();
+            command += " " + trainName;
+        } else if (command.startsWith("7")){
+            System.out.println("Введите новый уровень комфорта");
+            String type = reader.readLine();
+            command += " " + type;
         }
         return command;
     }
@@ -36,7 +44,8 @@ public class ClientCommandHandler {
     private String getPromptForCommand(String command) {
         return switch (command) {
             case "1" -> "Введите имя поезда:";
-            case "2", "3", "4", "5" -> "Введите TrainId:";
+            case "2", "3", "4", "5", "6" -> "Введите TrainId:";
+            case "7" -> "Введите тип вагона для изменения";
             default -> null;
         };
     }
