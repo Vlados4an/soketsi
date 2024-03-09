@@ -1,41 +1,47 @@
-
 package ru.erma.socket.handler;
 
+import ru.erma.util.InputHandler;
+import ru.erma.util.Menu;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ClientCommandHandler {
-    private final BufferedReader reader;
+    private final InputHandler inputHandler;
+    private final Menu menu;
 
     public ClientCommandHandler(BufferedReader reader) {
-        this.reader = reader;
+        this.inputHandler = new InputHandler(reader);
+        this.menu = new Menu(inputHandler);
     }
 
     public String handleCommand() throws IOException {
-        System.out.println("Введите номер команды или 'exit' для выхода:");
-        String command = reader.readLine();
-        if ("exit".equalsIgnoreCase(command)) {
-            return command;
+        menu.displayMenu();
+        int commandNumber = menu.getUserChoice();
+        if (commandNumber == 8) {
+            return "exit";
         }
+        String command = String.valueOf(commandNumber);
         String prompt = getPromptForCommand(command);
-        if (prompt != null) {
-            String userInput = getUserInput(prompt);
+        if (prompt == null){
+            return null;
+        }
+        if (prompt.startsWith("1") || prompt.startsWith("7")) {
+            String userInput = inputHandler.getStringInput(prompt);
             command += " " + userInput;
+        } else {
+            int trainId = menu.getTrainIdFromUser();
+            command += " " + trainId;
         }
         if (command.startsWith("5")) {
-            System.out.println("Введите минимальную вместимость:");
-            String minCapacity = reader.readLine();
-            System.out.println("Введите максимальную вместимость:");
-            String maxCapacity = reader.readLine();
+            int minCapacity = menu.getMinPassengerCapacity();
+            int maxCapacity = menu.getMaxPassengerCapacity(minCapacity);
             command += " " + minCapacity + " " + maxCapacity;
         } else if (command.startsWith("6")) {
-            System.out.println("Введите новое име поезда:");
-            String trainName = reader.readLine();
+            String trainName = inputHandler.getStringInput("Введите новое имя поезда:");
             command += " " + trainName;
         } else if (command.startsWith("7")){
-            System.out.println("Введите новый уровень комфорта");
-            String type = reader.readLine();
+            String type = menu.getCarriageTypeFromUser();
             command += " " + type;
         }
         return command;
@@ -48,10 +54,5 @@ public class ClientCommandHandler {
             case "7" -> "Введите тип вагона для изменения";
             default -> null;
         };
-    }
-
-    private String getUserInput(String prompt) throws IOException {
-        System.out.println(prompt);
-        return reader.readLine();
     }
 }

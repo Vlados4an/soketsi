@@ -15,13 +15,11 @@ public class Application {
     private final TrainService trainService;
     private final TrainInitializer trainInitializer;
     private final TrainModifier trainModifier;
-    private final Menu menu;
 
-    public Application(TrainService trainService, TrainInitializer trainInitializer, TrainModifier trainModifier, Menu menu) {
+    public Application(TrainService trainService, TrainInitializer trainInitializer, TrainModifier trainModifier) {
         this.trainService = trainService;
         this.trainInitializer = trainInitializer;
         this.trainModifier = trainModifier;
-        this.menu = menu;
     }
 
     public String runCommand(String command,String trainParam) {
@@ -67,12 +65,10 @@ public class Application {
         CarriageFactory carriageFactory = new CarriageFactory();
         CarriageDao carriageDao = new CarriageDao(connectionProvider, carriageFactory);
         TrainDao trainDao = new TrainDao(connectionProvider);
-        InputHandler inputHandler = new InputHandler();
         TrainInitializer trainInitializer = new TrainInitializer(trainDao, carriageDao);
         TrainService trainService = new TrainService(carriageDao);
         TrainModifier trainModifier = new TrainModifier(trainDao, carriageDao);
-        Menu menu = new Menu(inputHandler);
-        return new Application(trainService, trainInitializer, trainModifier, menu);
+        return new Application(trainService, trainInitializer, trainModifier);
     }
 
     private String saveTrain(String trainName) {

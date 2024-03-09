@@ -2,7 +2,6 @@ package ru.erma.service;
 
 import ru.erma.dao.CarriageDao;
 import ru.erma.dao.TrainDao;
-import ru.erma.util.InputHandler;
 
 public class TrainModifier {
     private final TrainDao trainDao;

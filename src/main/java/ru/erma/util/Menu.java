@@ -1,5 +1,7 @@
 package ru.erma.util;
 
+import java.io.IOException;
+
 public class Menu {
     private final InputHandler inputHandler;
 
@@ -27,15 +29,15 @@ public class Menu {
         System.out.println("4) Sleeping");
     }
 
-    public int getUserChoice() {
+    public int getUserChoice() throws IOException {
         return inputHandler.getPositiveIntInput("Choose an option:");
     }
 
-    public int getMinPassengerCapacity() {
+    public int getMinPassengerCapacity() throws IOException {
         return inputHandler.getPositiveIntInput("Enter min passenger capacity:");
     }
 
-    public int getMaxPassengerCapacity(int min) {
+    public int getMaxPassengerCapacity(int min) throws IOException {
         int max;
         do {
             max = inputHandler.getPositiveIntInput("Enter max passenger capacity:");
@@ -46,11 +48,11 @@ public class Menu {
         return max;
     }
 
-    public int getTrainIdFromUser() {
+    public int getTrainIdFromUser() throws IOException {
         return inputHandler.getPositiveIntInput("Enter the ID of the train:");
     }
 
-    public String getCarriageTypeFromUser() {
+    public String getCarriageTypeFromUser() throws IOException {
         displayCarriageTypes();
         int typeIndex;
         String[] types = {"Dining", "Freight", "Passenger", "Sleeping"};

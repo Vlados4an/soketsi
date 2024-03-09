@@ -1,35 +1,34 @@
 package ru.erma.util;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 public class InputHandler {
-    private final Scanner scanner;
+    private final BufferedReader reader;
 
-    public InputHandler() {
-        this.scanner = new Scanner(System.in);
+    public InputHandler(BufferedReader reader) {
+        this.reader = reader;
     }
 
-    public String getStringInput(String message) {
+
+    public String getStringInput(String message) throws IOException {
         System.out.println(message);
-        return scanner.nextLine();
+        return reader.readLine();
     }
 
-    public int getIntInput(String message) {
+    public int getIntInput(String message) throws IOException {
         System.out.println(message);
-        while (!scanner.hasNextInt()) {
-            System.out.println("That's not a number! Please enter a number:");
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
-
-    public void skipLine() {
-        if (scanner.hasNextLine()) {
-            scanner.nextLine();
+        while (true) {
+            String line = reader.readLine();
+            try {
+                return Integer.parseInt(line);
+            } catch (NumberFormatException e) {
+                System.out.println("That's not a number! Please enter a number:");
+            }
         }
     }
 
-    public int getPositiveIntInput(String message) {
+    public int getPositiveIntInput(String message) throws IOException {
         int input;
         do {
             input = getIntInput(message);

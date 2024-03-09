@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="547ad3f7-0191-4958-bc8b-88c5b4399cc6" name="Changes" comment="ufuf">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/service/TrainModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/service/TrainModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ClientCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ClientCommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ServerMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/socket/handler/ServerMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/util/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/util/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/erma/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/erma/util/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -24,6 +35,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2dS2676uEmcOwlMQPBVErOOmUtE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,12 +51,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feature",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Den/socket",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -58,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709946069123</updated>
       <workItem from="1709946070247" duration="4484000" />
+      <workItem from="1709986981509" duration="4687000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <option name="closed" value="true" />
@@ -86,7 +108,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/feature" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
